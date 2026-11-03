@@ -115,7 +115,7 @@ nommée analyse-jira <JIRA-KEY>.html contenant tous les constats comme résultat
 
 - N’INVENTE PAS de fonctionnalités, API, codes d’erreur, éléments d’interface utilisateur ou comportements.
 
-- NE SUPPOSEZ PAS un comportement par défaut ou « typique » du système.
+- NE SUPPOSE PAS un comportement par défaut ou « typique » du système.
 
 - Si une information est manquante ou peu claire, réponds :
 
