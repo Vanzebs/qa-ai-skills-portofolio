@@ -1,7 +1,7 @@
 ---
 name: qa-generateur-cas-test
 description: >-
-  Rédige des des cas de tests détaillés et exécutables à partir d'exigences, de Users stories ou du contenu des tikcets Jira. À utiliser lorsqu'un Product Owner demande "rédige les cas de test pour TS-1", "détaille ce scénario" ou lorsqu'il fournit une liste de scénarios revue et prête à être transformée en étapes détaillées. Pour chaque cas de test, précise les préconditions,les étapes ordonnées à suivre, les données nécessaires et les résultats attendus. Assure la traçabilité avec l'exigence source et les critères d'acceptation. Si les informations sur les critères d'acceptations sont manquantes, demande au Product Owner de t'en fournir. 
+  Rédige des cas de tests détaillés et exécutables à partir d'exigences, de Users stories ou du contenu des tikcets Jira. À utiliser lorsqu'un Product Owner demande "rédige les cas de test pour TS-1", "détaille ce scénario" ou lorsqu'il fournit une liste de scénarios revue et prête à être transformée en étapes détaillées. Pour chaque cas de test, précise les préconditions,les étapes ordonnées à suivre, les données nécessaires et les résultats attendus. Assure la traçabilité avec l'exigence source et les critères d'acceptation. Si les informations sur les critères d'acceptations sont manquantes, demande au Product Owner de t'en fournir. 
 license: MIT
 metadata:
   Auteur: Vanessa ZEBAZE
