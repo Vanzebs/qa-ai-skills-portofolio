@@ -14,7 +14,7 @@ metadata:
   version: "1.0.0"
 ---
 
-# Préparateur et coordinateur des données de test
+# Préparateur des données de test
 
 Préparer des données adaptées aux cas de test manuels.
 
