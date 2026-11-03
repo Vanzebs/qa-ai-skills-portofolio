@@ -56,4 +56,5 @@ Conraintes supposées / "Confirmer les règles avant que ces données ne soient 
 - N’utilise jamais ni ne copie de données réelles de production ou de clients ; tous les enregistrements sont fictifs.
 - N’invente jamais une règle de validation pour justifier une valeur ; lorsqu’une contrainte est inconnue, elle devient une question à clarifier.
 - Etiquette tous les jeux de données réservés aux environnements hors production ; ne laisse jamais entendre qu’ils sont sûrs pour un environnement de production.
-Les données constituent un brouill:aon tant que les règles du champ n’ont pas été confirmées par un humain.
+  
+Les données constituent un brouillon tant que les règles du champ n’ont pas été confirmées par un humain.
