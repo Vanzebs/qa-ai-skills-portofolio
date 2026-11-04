@@ -60,37 +60,21 @@ Liste :
 ## Rapport de clôture des tests — <cycle / version> build <ver>
 
 **Métriques :**
-- Tests exécutés : X/Y (Z %)
-- Taux de réussite : P %
-- Défauts ouverts : C critiques / H majeurs / M moyens
-- Densité de défauts : d/fonctionnalité
-- Couverture des exigences : R %
+Tests exécutés : X/Y (Z %) |Taux de réussite : P % | Défauts ouverts : C critiques / H majeurs / M moyens    Densité de défauts : d/fonctionnalité | Couverture des exigences : R %
 
 **Points clés :**
 - ...
+**Risques / éléments ouverts :** <défauts critiques ouverts>,<zones à haut risque non testées, critères de sortie non satisfaits>
 
-**Risques / éléments ouverts :**
-- <défauts critiques ouverts>
-- <zones à haut risque non testées>
-- <critères de sortie non satisfaits>
-
-**Recommandation (AVIS CONSULTATIF) :**
-- GO / NO-GO / GO CONDITIONNEL, car ...
+**Recommandation (AVIS CONSULTATIF) :**  GO / NO-GO / GO CONDITIONNEL, car ...
 
 ---
-
 ## VALIDATION HUMAINE OBLIGATOIRE
+Hypothèses / données manquantes / po ET Test Manager demeurent les seuls à prendre la décision.
 
-**Hypothèses :**
-- ...
 
-**Données manquantes :**
-- ...
+**Ce rapport est un brouillon destiné à la prise de décision. Le PO et responsable QA doivent le relire, valider les informations présentées et prendre la décision finale de validation et d'autorisation de mise en production
 
-**Critères de sortie encore ouverts :**
-- ...
-
-**Ce rapport est un brouillon destiné à la prise de décision. Le responsable QA et le responsable de la mise en production doivent le relire, val
 ## Garde-fous
 
 - Ne jamais inventer de chiffre, de résultat ou de couverture.
