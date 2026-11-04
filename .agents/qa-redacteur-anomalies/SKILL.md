@@ -1,141 +1,214 @@
 ---
 name: qa-redacteur-anomalies
 description: >-
-  Transformer les observations d’un testeur en rapport d’anomalie clair
-  et reproductible. À utiliser lorsqu’un test échoue, qu’un dysfonctionnement
-  est décrit ou qu’un problème intermittent doit être documenté.
-  Produire un rapport comprenant le titre, l’environnement, les étapes,
-  les résultats attendus et observés, l’impact, les preuves disponibles
-  et une proposition de sévérité et de priorité.
-  Rapporter uniquement les faits connus, sans inventer d’étapes ni de preuves,
-  et faire confirmer le rapport avant son enregistrement.
+ Transforme un dysfonctionnement en un rapport de bug clair et reproductible. À utiliser lorsqu'un testeur dit  « rédige un rapport de bug » ou décrit un problème et souhaite qu'il soit correctement documenté. Produit un rapport structuré comprenant :e titre ;l'environnement ;les étapes de reproduction;le résultat attendu par rapport au résultat observé;la sévérité et la priorité ;les preuves (captures d'écran, logs, vidéos, etc.) ;la zone ou le composant suspecté.Le rapport est ensuite prêt à être copié dans l'outil de suivi des anomalies après validation par un humain.Le rapport doit se baser uniquement sur les faits observés : n'invente jamais une étape de reproduction, une information technique ou une ligne de journal (log) qui n'a pas été fournie ou observée.
 license: MIT
 metadata:
-  auteur: Vanessa ZEBAZE
+  auteur : Vanessa ZEBAZE
   phase-stlc: Gestion des anomalies
   version: 1.0.0
 ---
 
 # Rédacteur de rapports d’anomalie
 
-Rédige un rapport qu’un développeur peut comprendre et utiliser
-pour tenter de reproduire le problème dès la première lecture.
-
-Privilégie un rapport précis, étayé par les éléments disponibles,
-sans présenter des suppositions comme des faits.
+Rédige un rapport qu'un développeur peut reproduire dès la première lecture. Un bon rapport de bug est précis, appuyé par des preuves et ne présente jamais des suppositions comme des faits.
 
 ## Quand l’utiliser ?
 
-- Un test échoue ou un comportement anormal nécessite un rapport.
-- Une personne décrit un problème de manière informelle et souhaite
-  le structurer pour l’outil de suivi.
-- Un problème intermittent doit être documenté avec sa fréquence
-  et ses conditions d’apparition.
+- Un test manuel révèle un comportement inattendu.
+- Le testeur décrit un problème avec quelques notes ou captures.
+- Une anomalie existante nécessite des informations complémentaires.
+- Un problème intermittent doit être documenté.
+- Le testeur souhaite préparer un rapport à enregistrer dans Jira.
+
+## Mode d’accès aux informations
+
+Dans le contexte actuel, travailler à partir des éléments fournis
+par le testeur :
+
+- description libre ;
+- contenu copié depuis Jira/Xray ;
+- export ;
+- captures ou pièces jointes.
+
+Une clé ou un lien Jira/Xray ne donne pas automatiquement accès à son contenu.
+
+Si un connecteur, un serveur MCP ou une API autorisée devient disponible,utiliser uniquement les opérations réellement accessibles.
+
+Ne jamais prétendre avoir consulté Jira/Xray sans accès effectif.
 
 ## Workflow
 
-### 1. Recueil les faits
+### 1. Accepte les observations brutes
 
-Releve :
+Commence par les informations que le testeur possède déjà :quelques phrases, une capture, le contenu du test ou de son exécution.
 
-- les actions réalisées ;
-- le résultat observé ;
-- la version ou le build ;
-- l’environnement ;
-- le rôle utilisateur ;
-- les données et préconditions utiles ;
-- les journaux, captures ou traces disponibles.
+N'impose pas un formulaire complet avant de commencer.
 
-Si une information manque, la demander ou la signaler comme inconnue.
-Ne comble pasles informations manquantes par des suppositions.
+Identifie ce que le testeur a fait, ce qu’il attendait et ce qu’il a observé.
 
-### 2. Rédige un titre précis
+### 2. Extrais les informations disponibles
 
-Utilise le format :
+Recherche dans les éléments fournis :
 
-[Zone concernée] — Comportement observé — Condition d’apparition
-
-Rédige un titre spécifique et facile à retrouver dans l’outil de suivi.
-
-### 3. Documente la reproduction
-
-Décris les préconditions et les étapes minimales, numérotées,
-à partir d’un état initial connu.
-
-Sépare clairement :
-
+- le projet et l’application ;
+- la référence du test Xray et de son exécution ;
+- les préconditions et les étapes du test ;
 - le résultat attendu ;
-- le résultat réellement observé.
+- les actions réellement réalisées ;
+- le résultat observé ;
+- la version et l’environnement ;
+- le rôle utilisateur et les données pertinentes ;
+- les messages d’erreur et preuves ;
+- les anomalies déjà associées;
+- les journaux (logs), captures d'écran, vidéos ou traces disponibles.
 
-Précise la source du résultat attendu lorsqu’elle est disponible :
-exigence, critère d’acceptation, règle métier ou confirmation du Product Owner.
+Ne demande pas de ressaisir une information déjà lisible dans les sources.
 
-Si le comportement attendu n’est pas clair, demande une clarification.
+Distingue les étapes prévues dans Xray des étapes que le testeur confirme avoir réellement exécutées.
 
-Si le problème ne se reproduit pas systématiquement, le préciser.
-Indique le nombre d’occurrences et de tentatives lorsqu’il est connu,
-par exemple : « Observé 2 fois sur 5 tentatives ».
+Si une information manque, pose la question. Ne complète jamais les étapes de reproduction à partir de suppositions ou de ton imagination.
 
-N'affirme pas que les étapes ont été rejouées si ce n’est pas le cas.
+### 3. Prends en compte les anomalies existantes
 
-### 4. Propose la sévérité et la priorité
+ Si une anomalie associée au test ou à l’exécution est fournie,examine si elle décrit le problème observé.
+
+Compare :
+
+- le comportement ;
+- les conditions d’apparition 
+- la version et l’environnement ;
+- les étapes et résultats ;
+- le statut du ticket, lorsqu’il est connu.
+
+Propose selon les informations disponibles :
+
+- un nouveau rapport ;
+- un complément à une anomalie existante ;
+- un commentaire de retest ;
+- un doublon possible à confirmer.
+
+Ne conclus pas qu’il s’agit du même problème sur le seul titre ou sur la présence d’une anomalie liée au test.
+
+Sans accès aux anomalies existantes, précise :
+« Vérification des anomalies existantes non effectuée ».
+
+N'affirme pas que le problème est nouveau ou unique.
+
+### 4. Produis un premier brouillon
+
+Rédige avec les informations connues :
+
+- un titre précis : le titre doit être spécificaue, facilement recherchable et compréhensible sans ouvrir le ticket ;
+- le contexte ;
+- les préconditions utiles ;
+- les étapes réalisées ;
+- le résultat attendu ;
+- le résultat observé ;
+- les preuves disponibles.
+
+Utilise le format de titre :
+
+[Application ou fonction] — Comportement observé — Condition distinctive
+
+Indique « À préciser » pour les informations inconnues.
+Ne pas les remplacer par des suppositions.
+
+### 5. Pose uniquement les questions utiles
+
+Après extraction des informations, identifie ce qui manque pour comprendre le problème ou tenter de le reproduire.
+
+Regroupe les questions prioritaires dans une liste courte.
+
+Demande notamment, seulement si nécessaire :
+
+- quelle étape a réellement échoué ;
+- quel résultat était attendu et sur quelle base ;
+- quelle version ou quel environnement était utilisé ;
+- quelles conditions ou données déclenchent le problème ;
+- si le problème s’est reproduit.
+
+Ne pas retarder inutilement le brouillon pour un champ secondaire.
+
+### 6. Précise la reproductibilité et l’impact
+
+Indique les occurrences et tentatives connues.
+
+Ne transforme pas « observé deux fois » en « deux fois sur deux » sans confirmation.
+
+Décris l’impact connu : action impossible, parcours bloqué, résultat incorrect ou autre conséquence observée.
+
+Mentionne un contournement uniquement s’il a été fourni, en précisant s’il a été vérifié.
+
+Ne déduis pas automatiquement la cause du problème.
+
+### 7. Propose la sévérité et la priorité
 
 Distingue :
 
-- la sévérité : gravité de l’impact observé ;
+- la sévérité : gravité de l’impact ;
 - la priorité : urgence de traitement.
 
-Utilise les échelles du projet et justifier chaque proposition
-en une phrase.
+Utilise les échelles du projet lorsqu’elles sont connues.
+Sinon, décrire l’impact et l’urgence sans inventer de niveau.
 
-Si les échelles sont inconnues, décrire l’impact et l’urgence
-sans inventer de niveau.
+Justifie les propositions et signale les éléments à confirmer.
 
-Mentionne la zone ou le composant suspecté comme une hypothèse,
-sans affirmer qu’il s’agit de la cause.
+Présente toute zone technique suspectée comme une hypothèse.
 
-Laisse la classification définitive aux responsables.
+### 8. Finalise le texte destiné à Jira
 
-### 5. Relie les preuves
+Intégre les réponses du testeur et produis un rapport prêt à copier.
 
-Référence les éléments disponibles : captures, journaux ou traces.
+Pour une anomalie existante, prépare uniquement le complément utile,sans remplacer son historique.
 
-Signale les observations qui ne sont pas étayées par une preuve.
-Ne pas inventer de lien, de message d’erreur ou de ligne de journal.
+Liste les références Xray et les preuves à ajouter.
 
-Retire ou masque les données personnelles qui ne sont pas nécessaires au diagnostic.
+Une pièce jointe fournie dans le chat n’est pas automatiquement enregistrée dans Jira.
 
-### 6. Fais confirmer le rapport
+Fais relire les faits et les propositions de classification avant l’enregistrement.
 
-Présente le rapport comme un brouillon.
+### 9. Distingue rédaction et enregistrement
 
-Liste :
+Sans connexion autorisée :
 
-- les informations non confirmées ;
-- les hypothèses ;
-- la sévérité et la priorité proposées.
+- le testeur copie le rapport dans Jira ;
+- il ajoute les preuves ;
+- il associe l’anomalie au test ou à l’exécution dans Xray selon la procédure du projet.
 
-Fais confirmer les éléments nécessaires par le rapporteur/testeur
-avant l’enregistrement dans l’outil de suivi.
+Avec un outil adapté, ne crée, modifie ou associe un ticket que si l’action est demandée ou autorisée.
+
+Ne déclare une création, une modification ou une association comme réalisée qu’après confirmation de son succès.
 
 ## Format de sortie
 
-# Anomalie — [Zone] — [Comportement observé] — [Condition]
+# Rapport d’anomalie
+
+## Action proposée
+
+- Nouveau rapport / Complément / Commentaire de retest /
+  Doublon possible à confirmer
+- Anomalie existante concernée, si connue :
+- Justification :
+
+## Titre
+
+[Application ou fonction] — Comportement observé — Condition distinctive
 
 ## Contexte
 
-- Projet / application :
-- Version ou build :
+- Projet et application :
+- Version :
 - Environnement :
-- Rôle utilisateur :
-- Cas de test ou exigence associé, si connu :
+- Test Xray :
+- Exécution Xray :
+- Rôle utilisateur, si pertinent :
 
-## Préconditions et données de test
+## Préconditions et données utiles
 
-- État initial :
-- Données nécessaires :
+[Informations nécessaires à la compréhension ou à la reproduction]
 
-## Étapes de reproduction
+## Étapes réalisées
 
 1.
 2.
@@ -145,40 +218,45 @@ avant l’enregistrement dans l’outil de suivi.
 
 [Comportement attendu]
 
-Source : [Exigence / critère d’acceptation / règle métier / à confirmer]
+Source : [Test Xray / exigence / critère d’acceptation /
+confirmation du testeur / à préciser]
 
 ## Résultat observé
 
 [Comportement réellement constaté]
 
-## Fréquence
+## Reproductibilité
 
-- Reproduction : Systématique / Intermittente / À confirmer
-- Occurrences et tentatives connues :
+- Observations et tentatives connues :
+- Conditions particulières :
+- Informations restant à confirmer :
 
 ## Impact et classification proposée
 
-- Impact observé :
+- Impact connu :
+- Contournement et état de vérification :
 - Sévérité proposée et justification :
 - Priorité proposée et justification :
-- Zone suspectée, si pertinente : [Hypothèse à confirmer]
 
-## Preuves disponibles
+## Preuves
 
-- [Liens ou références aux captures, journaux et traces]
+- Éléments fournis :
+- [Liens ou références aux captures, journaux et traces]:
+- Preuves manquantes utiles :
 
-## Points à confirmer avant enregistrement
+## Points à confirmer
 
-- [Informations manquantes]
-- [Hypothèses]
-- [Classification proposée]
+[Questions restantes et hypothèses éventuelles]
+
+Pour un complément ou un retest, utiliser uniquement les rubriques pertinentes et référencer le ticket existant.
 
 ## Garde-fous
 
-- Ne jamais inventer une étape réalisée, un message d’erreur, une preuve ou un résultat.
-- Distingue les faits observés des hypothèses.
-- Signale les limites de reproductibilité.
-- Ne présente pas une sévérité, une priorité ou une cause supposée
-  comme définitivement validée.
-- N'enregistre pas le rapport sans autorisation.
-- Conserver les mentions d’attribution et de licence du contenu source.
+- Ne pas inventer une action, un résultat, un message ou une preuve.
+- Ne pas confondre contenu prévu du test et exécution réellement réalisée.
+- Ne pas demander de ressaisir les informations déjà disponibles.
+- Ne pas considérer une anomalie liée comme un doublon confirmé.
+- Ne pas annoncer un accès à Jira/Xray qui n’existe pas.
+- Ne pas présenter une cause supposée comme démontrée.
+- Ne pas modifier le statut ou l’historique d’une anomalie sans autorisation.
+- Le rapport reste à relire avant son enregistrement.
