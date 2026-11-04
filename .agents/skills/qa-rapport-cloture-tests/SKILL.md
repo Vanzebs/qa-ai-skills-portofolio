@@ -23,93 +23,38 @@ Présenter un avis argumenté. La décision de livraison et la clôture officiel
 
 ## Workflow
 
-### 1. Recueille les informations
+1. **Recueil les données d'entrée.** Récupére les résultats d'exécution des tests, les données relatives aux défauts et l'analyse de couverture. Si une source est manquante ou incomplète, indique-le explicitement ; ne crée jamais de métriques pour compléter le rapport.
 
-Identifie :
+2. **Calcule les métriques.** 
+Calcule :
+   - le taux de réussite sur les tests exécutés ;
+   - le pourcentage d'avancement de l'exécution des tests ;
+   - la densité de défauts ;
+   - le nombre de défauts ouverts par niveau de sévérité (en mettant en évidence les défauts critiques ouverts) ;
+   - la couverture des exigences.
 
-- le projet et la campagne ;
-- la version et l’environnement ;
-- la période ;
-- le périmètre prévu et ses modifications ;
-- les résultats d’exécution ;
-- les anomalies ;
-- l’analyse de couverture ;
-- les critères de sortie définis par l’équipe.
+   Affichez les valeurs utilisées dans les calculs (numérateurs et dénominateurs) afin que les résultats puissent être vérifiés et audités.
 
-Signale les sources absentes, partielles ou contradictoires.
-Ne mélange pas les résultats de versions ou d’environnements différents.
-
-### 2. Calcul les indicateurs
-
-Précise les définitions utilisées et afficher les effectifs.
-
-Utilise, sauf convention différente explicitement fournie :
-
-- Tests terminés = Réussis + Échoués.
-- Taux de tests terminés =
-  (Réussis + Échoués) / Tests dans le périmètre × 100.
-- Taux de réussite =Réussis / (Réussis + Échoués) × 100.
-
-Présente séparément les tests bloqués, en cours, non exécutés et les résultats à confirmer.
-
-Compte chaque cas une seule fois dans le bilan courant. Précise le traitement des retests et conserver leur historique.
-
-Présente les anomalies ouvertes par sévérité selon l’échelle du projet.
-
-Calcule une densité d’anomalies uniquement si le nombre d’anomalies, l’unité de référence et le périmètre sont connus et pertinents.
-Sinon, indiquer « Non calculable » ou omettre cet indicateur.
-
-Pour la couverture, reprendre les mesures documentées et leur définition.
-N'assimile pas couverture et réussite.
-
-Ne calcule pas un taux lorsque le dénominateur est nul ou inconnu.
-
-### 3. Synthétise les résultats et les risques
-
+3. **Synthétise les résultats.** 
 Présente :
+   - les points forts (ce qui s'est bien passé) ;
+   - les points faibles ;
+   - les risques non résolus.
 
-- les points positifs ;
-- les difficultés rencontrées ;
-- les anomalies critiques ou majeures encore ouvertes ;
-- les zones à risque non testées ;
-- les blocages ;
-- les limites de couverture ;
-- les éventuels contournements confirmés.
+   MetS particulièrement en évidence tout défaut critique ou majeur encore ouvert ainsi que toute zone à haut risque qui n'a pas été testée.
 
-Relie les constats aux sources disponibles.
+4. **Formule une recommandation, sans prendre la décision.** 
+Fournis une recommandation de type **GO / NO-GO / GO CONDITIONNEL**, accompagnée des raisons qui la justifient. Cette recommandation doit être explicitement présentée comme un **avis consultatif** destiné à aider à la décision.
 
-### 4. Évalue les critères de sortie
+5. **VALIDATION HUMAINE OBLIGATOIRE.** 
+Présente le document sous forme de **brouillon de rapport**. 
+Liste :
+   - les hypothèses ;
+   - les données manquantes ;
+   - les critères de sortie (exit criteria) encore non satisfaits.
 
-Pour chaque critère défini par l’équipe, indique :
+   Demandez au **Product Owner** et au **Test Manager** de relire le rapport et de prendre la décision finale de validation et d'autorisation de mise en production.
 
-- satisfait ;
-- non satisfait ;
-- non vérifiable.
-
-Justifie l’état avec les données disponibles.
-
-N'invente pas de seuil d’acceptation si aucun critère n’a été fourni.
-
-### 5. Propose un avis sans décider
-
-Propose un avis parmi :
-
-- Favorable : les éléments disponibles soutiennent les critères convenus.
-- Défavorable : des écarts ou risques empêchent de soutenir ces critères.
-- Favorable sous conditions : préciser les conditions et leur validation attendue.
-- Avis réservé : les informations sont insuffisantes pour conclure.
-
-Justifie l’avis et rappele qu’il est consultatif.
-
-### 6. Fais revoir le rapport
-
-Présente le rapport comme un brouillon.
-
-Mets en évidence les hypothèses, informations manquantes et critères restant ouverts.
-
-Fais revoir le rapport par le PO et le Test Manager.
-
-Ne déclare pas la campagne officiellement clôturée sans décision explicite.
 
 ## Format de sortie
 
@@ -173,7 +118,7 @@ Données manquantes :
 Éléments non confirmés :
 
 ...
-Le PO; Tech lead demeure demeurent les seuls décisionnaires pour la validation finale et l'autorisation de mise en production.s :
+Le PO; Tech lead demeure demeurent les seuls décisionnaires pour la validation finale et l'autorisation de mise en production.
 
 ## Garde-fous
 
