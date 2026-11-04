@@ -1,7 +1,7 @@
 ---
 name: qa-tri-anomalies
 description: >-
-  Préparer le triage d’un ensemble d’anomalies. À utiliser pour organiser un backlog, rechercher des doublons possibles, proposer une sévérité, une priorité et une orientation vers un composant ou une équipe.Signaler les rapports incomplets. Présenter toutes les classifications comme des recommandations à confirmer, sans fusionner, fermer ou réaffecter automatiquement les tickets.
+  Préparer le tri d’un ensemble d’anomalies. À utiliser pour organiser un backlog, rechercher des doublons possibles, proposer une sévérité, une priorité et une orientation vers un composant ou une équipe.Signaler les rapports incomplets. Présenter toutes les classifications comme des recommandations à confirmer, sans fusionner, fermer ou réaffecter automatiquement les tickets.
 license: MIT
 metadata:
   auteur: Vanessa ZEBAZE
