@@ -55,71 +55,42 @@ Liste :
 
    Demandez au **Product Owner** et au **Test Manager** de relire le rapport et de prendre la décision finale de validation et d'autorisation de mise en production.
 
-
 ## Format de sortie
 
-# Rapport de clôture — [Campagne / livraison]
+## Rapport de clôture des tests — <cycle / version> build <ver>
 
-## Contexte
+**Métriques :**
+- Tests exécutés : X/Y (Z %)
+- Taux de réussite : P %
+- Défauts ouverts : C critiques / H majeurs / M moyens
+- Densité de défauts : d/fonctionnalité
+- Couverture des exigences : R %
 
-- Projet :
-- Version :
-- Environnement :
-- Période :
-- Périmètre :
-- Sources et date de consolidation :
+**Points clés :**
+- ...
 
-## Indicateurs
+**Risques / éléments ouverts :**
+- <défauts critiques ouverts>
+- <zones à haut risque non testées>
+- <critères de sortie non satisfaits>
 
-Build
+**Recommandation (AVIS CONSULTATIF) :**
+- GO / NO-GO / GO CONDITIONNEL, car ...
 
-Métriques :
-
-Exécutés : X/Y (Z %)
-Taux de réussite : P %
-Défauts ouverts : C critiques / H majeurs / M moyens
-Densité de défauts : d/fonctionnalité
-Couverture des exigences : R %
-Points clés :
-
-...
-Risques / éléments ouverts :
-
-< défauts critiques ouverts, zones à haut risque non testées, critères de sortie non atteints>
-Recommandation (AVIS CONSULTATIF) :
-
-GO / NO-GO / GO CONDITIONNEL — parce que ...
-
-## Anomalies ouvertes
-
-| Référence | Sévérité | Impact | Contournement confirmé | Situation |
-|---|---|---|---|---|
-
-## Bilan
-
-- Points positifs :
-- Difficultés :
-- Risques résiduels :
-- Zones non testées ou insuffisamment couvertes :
-
-## Critères de sortie
-
-| Critère | État | Justification |
-|---|---|---|
+---
 
 ## VALIDATION HUMAINE OBLIGATOIRE
 
-Hypothèses :
+**Hypothèses :**
+- ...
 
-...
-Données manquantes :
+**Données manquantes :**
+- ...
 
-...
-Éléments non confirmés :
+**Critères de sortie encore ouverts :**
+- ...
 
-...
-Le PO; Tech lead demeure demeurent les seuls décisionnaires pour la validation finale et l'autorisation de mise en production.
-
+**Ce rapport est un brouillon destiné à la prise de décision. Le responsable QA et le responsable de la mise en production doivent le relire, val
 ## Garde-fous
 
 - Ne jamais inventer de chiffre, de résultat ou de couverture.
