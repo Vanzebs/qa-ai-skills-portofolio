@@ -126,18 +126,24 @@ Ne déclare pas la campagne officiellement clôturée sans décision explicite.
 
 ## Indicateurs
 
-| Indicateur | Effectifs ou formule | Résultat |
-|---|---|---|
-| Tests dans le périmètre | | |
-| Réussis | | |
-| Échoués | | |
-| Bloqués | | |
-| En cours | | |
-| Non exécutés | | |
-| À confirmer | | |
-| Taux de tests terminés | | |
-| Taux de réussite | | |
-| Couverture documentée | Définition et dénominateur | |
+Build
+
+Métriques :
+
+Exécutés : X/Y (Z %)
+Taux de réussite : P %
+Défauts ouverts : C critiques / H majeurs / M moyens
+Densité de défauts : d/fonctionnalité
+Couverture des exigences : R %
+Points clés :
+
+...
+Risques / éléments ouverts :
+
+< défauts critiques ouverts, zones à haut risque non testées, critères de sortie non atteints>
+Recommandation (AVIS CONSULTATIF) :
+
+GO / NO-GO / GO CONDITIONNEL — parce que ...
 
 ## Anomalies ouvertes
 
@@ -156,13 +162,18 @@ Ne déclare pas la campagne officiellement clôturée sans décision explicite.
 | Critère | État | Justification |
 |---|---|---|
 
-## Avis consultatif
+## VALIDATION HUMAINE OBLIGATOIRE
 
-- Avis :
-- Justification :
-- Conditions éventuelles :
-- Informations manquantes :
-- Décision attendue des responsables :
+Hypothèses :
+
+...
+Données manquantes :
+
+...
+Éléments non confirmés :
+
+...
+Le PO; Tech lead demeure demeurent les seuls décisionnaires pour la validation finale et l'autorisation de mise en production.s :
 
 ## Garde-fous
 
