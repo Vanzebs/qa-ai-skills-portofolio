@@ -119,4 +119,4 @@ Ne déclare les modifications réalisées qu’après confirmation du succès.
 - Distinguer recommandations et décisions déjà validées.
 - Ne pas modifier silencieusement les statuts ou les affectations.
 - Conserver les références des tickets et les justifications.
-- Le responsable du triage conserve la décision finale.
+- Le PO conserve la décision finale.
