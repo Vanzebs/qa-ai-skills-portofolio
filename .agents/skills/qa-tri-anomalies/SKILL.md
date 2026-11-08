@@ -1,4 +1,4 @@
----
+----
 name: qa-tri-anomalies
 description: >-
   Préparer le tri d’un ensemble d’anomalies. À utiliser pour organiser un backlog, rechercher des doublons possibles, proposer une sévérité, une priorité et une orientation vers un composant ou une équipe.Signaler les rapports incomplets. Présenter toutes les classifications comme des recommandations à confirmer, sans fusionner, fermer ou réaffecter automatiquement les tickets.
@@ -24,7 +24,7 @@ Présente des recommandations que les POs peuvent accepter, modifier ou rejeter.
 
 - Utilise la liste fournie ou les tickets accessibles dans l’outil de suivi.
 - Identifie le projet et le périmètre concernés.
-- Releve les champs disponibles :identifiant, titre, description, statut, version, environnement,impact, preuves, sévérité, priorité et composant.
+- Relève les champs disponibles :identifiant, titre, description, statut, version, environnement,impact, preuves, sévérité, priorité et composant.
 - Signale les informations absentes.
 - N'invente pas de statut, de classification ou de composant.
 
@@ -57,7 +57,7 @@ Conserve les classifications existantes et présenter séparément les éventuel
 
 Suggére un composant ou une équipe à partir des informations disponibles.
 
-Justifie la proposition et signaler les orientations incertaines.
+Justifie la proposition et signale les orientations incertaines.
 
 N'attribue pa une anomalie à une personne sur la seule base d’une supposition.
 
@@ -71,9 +71,9 @@ Liste les anomalies pour lesquelles il manque notamment :
 - les preuves nécessaires ;
 - l’impact métier.
 
-Précise les questions à poser au rapporteur.
+Précise les questions à poser au PO.
 
-### 6. Fais confirmer du tri
+### 6. Fais confirmer le tri
 
 Présente le résultat comme une proposition.
 
