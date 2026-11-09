@@ -139,4 +139,3 @@ nommée analyse-jira <JIRA-KEY>.html contenant tous les constats comme résultat
 
 « faible niveau de confiance ».
 
-Le résultat doit être déterministe et reproductible.
